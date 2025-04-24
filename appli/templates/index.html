@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prédiction de Churn</title>
+</head>
+<body>
+    <h2>Formulaire de Prédiction de Churn</h2>
+    <form method="POST">
+        <label>Credit Score:</label><br>
+        <input type="number" name="CreditScore" required><br><br>
+
+        <label>Géographie (0 = France, 1 = Allemagne, 2 = Espagne):</label><br>
+        <input type="number" name="Geography" min="0" max="2" required><br><br>
+
+        <label>Genre (0 = Femme, 1 = Homme):</label><br>
+        <input type="number" name="Gender" min="0" max="1" required><br><br>
+
+        <label>Âge:</label><br>
+        <input type="number" name="Age" required><br><br>
+
+        <label>Années de fidélité (Tenure):</label><br>
+        <input type="number" name="Tenure" required><br><br>
+
+        <label>Solde (Balance):</label><br>
+        <input type="number" name="Balance" required><br><br>
+
+        <label>Nombre de produits:</label><br>
+        <input type="number" name="NumOfProducts" required><br><br>
+
+        <label>Carte de crédit (0 = Non, 1 = Oui):</label><br>
+        <input type="number" name="HasCrCard" min="0" max="1" required><br><br>
+
+        <label>Membre actif (0 = Non, 1 = Oui):</label><br>
+        <input type="number" name="IsActiveMember" min="0" max="1" required><br><br>
+
+        <label>Salaire estimé:</label><br>
+        <input type="number" name="EstimatedSalary" required><br><br>
+
+        <input type="submit" value="Prédire">
+    </form>
+
+    {% if prediction %}
+        <h3>Résultat : {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
